@@ -31,7 +31,7 @@ def won?(board)
       false
     end
   end
-  board.any?("X"||"O")
+  !board.all?(" ")
 end
 
 def full?(board)
