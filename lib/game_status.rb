@@ -15,7 +15,9 @@ WIN_COMBINATIONS = [
 ]
 
 def won?(board)
-  if board.include?("X"||"O")==true
+  if board.include?("X"||"O")!=true
+    return false
+  else
     WIN_COMBINATIONS.each do |win_combination|
       win_index_1 = win_combination[0]
       win_index_2 = win_combination[1]
@@ -31,8 +33,6 @@ def won?(board)
         false
       end
     end
-  else
-    return false
   end
 end
 
@@ -49,7 +49,7 @@ def draw?(board)
 end
 
 def over?(board)
-  if (won?(board)==true)||(draw?(board)==true)
+  if won?(board)==true||draw?(board)==true
     return true
   else
     return false
