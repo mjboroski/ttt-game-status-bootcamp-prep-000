@@ -16,7 +16,7 @@ WIN_COMBINATIONS = [
 
 def won?(board)
   board.include?("X"||"O")
-  board.all?{|index| index==' '}
+  board.none?{|index| index==' '}
   WIN_COMBINATIONS.each do |win_combination|
     win_index_1 = win_combination[0]
     win_index_2 = win_combination[1]
